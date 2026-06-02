@@ -1,0 +1,7 @@
+[project]
+name = "gn"
+version = "0.1.0"
+description = "FAFB+BANC connectome data for cross-sex neuron matching"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []
