@@ -8,3 +8,6 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Connectome data (large; keep local only)
+data/

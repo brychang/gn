@@ -1,24 +1,20 @@
 # gn
 
-FAFB+BANC brain connectome data for cross-sex neuron matching (VNC-style challenge).
+Investigate **graph neural network (GNN)** approaches to **graph matching** on connectomes.
 
-## Dataset: `fafb_banc_brain_min_syns_5`
+Primary use case: cross-sex neuron correspondence on FAFB+BANC brain connectomes (male/female adjacency graphs plus a benchmark warm-start matching).
 
-| File | Description |
-|------|-------------|
-| `male_connectome_graph.csv` | Male adjacency: `From Node ID`, `To Node ID`, `Weight` |
-| `female_connectome_graph.csv` | Female adjacency: same schema |
-| `benchmark.csv` | Warm-start matching: `Male Node ID` ↔ `Female Node ID` |
+## Data (local only)
 
-Node IDs use `m` / `f` prefixes (e.g. `m1024`, `f8`). Graphs are filtered to edges with at least 5 synapses.
-
-## Layout
+Connectome CSVs live under `data/` and are **not** tracked in git. Place the dataset locally:
 
 ```
 data/fafb_banc_brain_min_syns_5/
-├── male_connectome_graph.csv
+├── male_connectome_graph.csv   # From Node ID, To Node ID, Weight
 ├── female_connectome_graph.csv
-└── benchmark.csv
+└── benchmark.csv                 # Male Node ID ↔ Female Node ID
 ```
 
-Used by graph-matching pipelines (e.g. [`gm`](../gm/) band-merge and ACDC scoring).
+Node IDs use `m` / `f` prefixes (e.g. `m1024`, `f8`). Graphs retain edges with at least 5 synapses.
+
+Related non-GNN pipelines: [`gm`](../gm/) (band-merge, ACDC scoring).
